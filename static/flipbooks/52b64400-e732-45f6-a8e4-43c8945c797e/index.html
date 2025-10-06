@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flipbook Viewer</title>
+  <style>
+    body {
+      margin: 0; padding: 0;
+      background: #ccc;
+      font-family: sans-serif;
+    }
+    #bookContainer {
+      width: 900px;
+      height: 600px;
+      margin: 40px auto;
+    }
+    .page {
+      background: white;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .page img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .page-cover {
+      background: #333;
+      color: white;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+</head>
+<body>
+
+<div id="bookContainer">
+  
+    <div class="page page-cover page-cover-top" data-density="hard">My Book</div>
+    
+        <div class="page"><img src="page_1.png" alt="Page 1" /></div>
+        
+        <div class="page"><img src="page_2.png" alt="Page 2" /></div>
+        
+        <div class="page"><img src="page_3.png" alt="Page 3" /></div>
+        
+        <div class="page"><img src="page_4.png" alt="Page 4" /></div>
+        
+        <div class="page"><img src="page_5.png" alt="Page 5" /></div>
+        
+        <div class="page"><img src="page_6.png" alt="Page 6" /></div>
+        
+        <div class="page"><img src="page_7.png" alt="Page 7" /></div>
+        
+        <div class="page"><img src="page_8.png" alt="Page 8" /></div>
+        
+        <div class="page"><img src="page_9.png" alt="Page 9" /></div>
+        
+        <div class="page"><img src="page_10.png" alt="Page 10" /></div>
+        
+    <div class="page page-cover page-cover-bottom" data-density="hard">The End</div>
+    
+</div>
+
+<script>
+  const pageFlip = new St.PageFlip(document.getElementById("bookContainer"), {
+    width: 450,
+    height: 600,
+    size: "fixed",
+    showCover: true,
+    flippingTime: 1000,
+    useMouseEvents: true,
+    maxShadowOpacity: 0.5
+  });
+
+  pageFlip.loadFromHTML(document.querySelectorAll(".page"));
+</script>
+
+</body>
+</html>
